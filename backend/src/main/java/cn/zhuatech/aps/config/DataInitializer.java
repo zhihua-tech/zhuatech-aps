@@ -1,7 +1,13 @@
 /* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.aps.config;
 import cn.zhuatech.aps.model.*; import cn.zhuatech.aps.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration public class DataInitializer {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Bean CommandLineRunner seed(WorkCenterRepository centers,WorkOrderRepository orders,EquipmentRepository equipment,InspectionRepository inspections,UserRepository users,PasswordEncoder encoder){return args->{
         if(centers.count()>0)return;
         WorkCenter assembly=centers.save(new WorkCenter("WC-AS-01","总装一线","装配车间",2400)); WorkCenter machining=centers.save(new WorkCenter("WC-MC-02","精加工二线","机加车间",1800)); WorkCenter testing=centers.save(new WorkCenter("WC-TS-01","功能测试线","检测车间",2200));

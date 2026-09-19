@@ -9,8 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CapacityBalanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result analyze(Request request) {
         double effectiveHours = Math.max(.1, request.availableHours() - request.maintenanceHours());
         double demandHours = request.plannedHours() + request.changeoverHours();
@@ -25,9 +31,15 @@ public class CapacityBalanceService {
         return new Result(request.workCenter(), effectiveHours, loadPercent, overloadHours, status, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String workCenter, @Positive double availableHours,
                           @Min(0) double plannedHours, @Min(0) int urgentOrders,
                           @Min(0) double changeoverHours, @Min(0) double maintenanceHours) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String workCenter, double effectiveHours, double loadPercent,
                          double overloadHours, String status, List<String> actions) {}
 }

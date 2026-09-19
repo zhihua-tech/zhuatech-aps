@@ -12,8 +12,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class OrderPromiseService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(
         @DecimalMin("0.01") BigDecimal requiredHours,
         @DecimalMin("0.0") BigDecimal availableCapacityHours,
@@ -24,9 +30,15 @@ public class OrderPromiseService {
         @NotNull Boolean rushOrder
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String status, BigDecimal executableHours, BigDecimal capacityGapHours,
                          BigDecimal promiseConfidence, List<String> actions) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         BigDecimal effectiveCapacity = request.availableCapacityHours()
             .add(request.alternativeCapacityHours())

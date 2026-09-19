@@ -12,9 +12,16 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 企业有限产能场景评估，避免无限产能假设直接下发车间。 */
+/**
+ * 企业有限产能场景评估，避免无限产能假设直接下发车间。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class FiniteCapacityScenarioService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ScenarioResult evaluate(ScenarioRequest request) {
         int regularMinutes = Math.max(0, request.availableMinutes() - request.maintenanceMinutes()
                 - request.frozenCapacityMinutes() - request.changeoverMinutes());
@@ -41,6 +48,9 @@ public class FiniteCapacityScenarioService {
                 materialCapacity, feasibleQuantity, shortage, fillRate, decision, List.copyOf(controls));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ScenarioRequest(@NotBlank String planCode, @Min(1) int demandQuantity,
                                   @Min(1) int availableMinutes,
                                   @DecimalMin("0.01") BigDecimal cycleMinutesPerUnit,
@@ -49,6 +59,9 @@ public class FiniteCapacityScenarioService {
                                   @Min(0) @Max(100) int materialReadyPercent,
                                   boolean highPriority) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ScenarioResult(String planCode, int regularCapacity, int overtimeCapacity,
                                  int materialCapacity, int feasibleQuantity, int shortageQuantity,
                                  BigDecimal fillRate, String decision, List<String> controls) {}
