@@ -1,5 +1,7 @@
 # ZhuaTech APS｜知华科技高级计划排程系统
 
+[简体中文](README.md) | [English](README.en.md)
+
 > 面向离散制造企业的有限产能计划与排程社区源码版：把订单、物料、工艺、产能和交期放进同一张可执行计划。
 
 [![Java](https://img.shields.io/badge/Java-21-1f6f5c)](backend/pom.xml) [![Vue](https://img.shields.io/badge/Vue-3-42b883)](frontend/package.json) [![MySQL](https://img.shields.io/badge/MySQL-8-4479a1)](compose.yaml) [![License](https://img.shields.io/badge/license-non--commercial-c28752)](LICENSE)
